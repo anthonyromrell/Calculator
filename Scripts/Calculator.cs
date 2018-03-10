@@ -20,7 +20,6 @@ public class Calculator : ScriptableObject
     public void ChangePhase(CalulatorPhase calulatorPhase)
     {
         CalulatorPhase = calulatorPhase;
-        Debug.Log(CalulatorPhase.name);
     }
 
     public void RunPhase()

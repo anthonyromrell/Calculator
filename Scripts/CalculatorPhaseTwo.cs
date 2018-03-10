@@ -8,7 +8,6 @@ public class CalculatorPhaseTwo : CalulatorPhase {
 	public override void RunPhase()
 	{
 		Data.InputNext += IncomingTextHandler.ObjectText;
-		Debug.Log(Data.Input);
 		Data.ToOutputText(Data.InputNext);//GameAaction as String output
 	}
 }
