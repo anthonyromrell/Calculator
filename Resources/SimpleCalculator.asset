@@ -8,6 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7360dc5d7e447b68eb5c7ce10cfd9d, type: 3}
-  m_Name: SendCalcText
+  m_Script: {fileID: 11500000, guid: aed3f359dd7a943b498c848dcd5ced74, type: 3}
+  m_Name: SimpleCalculator
   m_EditorClassIdentifier: 
+  InputOne: 
+  InputTwo: 
+  InputThree: 
+  solution: 
+  TextOut: {fileID: 11400000, guid: 1c05910f4ba2a41aebfe49f56b7ff24d, type: 2}

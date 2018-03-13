@@ -7,7 +7,7 @@ public class CalculatorPhaseTwo : CalulatorPhase {
 
 	public override void RunPhase()
 	{
-		Data.InputNext += IncomingTextHandler.ObjectText;
-		Data.ToOutputText(Data.InputNext);//GameAaction as String output
+		Data.InputTwo += IncomingTextHandler.ObjectText;
+		Data.ToOutputText(Data.InputTwo);//GameAaction as String output
 	}
 }

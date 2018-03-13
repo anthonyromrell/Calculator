@@ -5,31 +5,35 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PhaseTree")]
 public class CalculatorPhaseThree : CalulatorPhase
 {
-
 	private string TempNext;
 	
 	public override void RunPhase()
 	{
-		float tempNum = float.Parse(Data.Input);
+		float tempNum = float.Parse(Data.InputOne);
 		float tempNumNext;
 
-		if (Data.InputNext != null)
+		if (Data.InputTwo != null)
 		{
-			TempNext = Data.InputNext;
-			tempNumNext = float.Parse(Data.InputNext);
+			TempNext = Data.InputTwo;
+			tempNumNext = float.Parse(Data.InputTwo);
 		}
 		else
 		{
 			tempNumNext = float.Parse(TempNext);
 		}
 
-		Calculate(tempNum, tempNumNext);
-		Data.Input = Data.solution;
-		Data.InputNext = null;
-		Data.ToOutputText(Data.Input);//GameAaction as String output
+		Operate(tempNum, tempNumNext);
+		ResetData();
 	}
 
-	private void Calculate(float num, float nextNum)//AddSO
+	private void ResetData()
+	{
+		Data.InputOne = Data.solution;
+		Data.InputTwo = null;
+		Data.ToOutputText(Data.InputOne); //GameAaction as String output
+	}
+
+	private void Operate (float num, float nextNum)//AddSO
 	{
 		Data.solution = (num + nextNum).ToString();
 	}

@@ -7,9 +7,11 @@ public class CalculatorData : ScriptableObject {
     
     public GameAction TextOutputAction;
     
-    public string Input;
-    public string InputNext;
+    public string InputOne;
+    public string InputTwo;
+    public string InputThree;
     public string solution;
+    public Operator CurrentOperator;
 
     public void ToOutputText(object obj)
     {
@@ -18,8 +20,27 @@ public class CalculatorData : ScriptableObject {
 
     private void OnEnable()
     {
-        Input = null;
-        InputNext = null;
+        InputOne = null;
+        InputTwo = null;
         solution = null;
+    }
+
+    public void OperatorCheck()
+    {
+        switch (CurrentOperator.name) 
+        {
+            case "+" :
+                    
+                break;
+            case "-" :
+                    
+                break;
+            case "*" :
+                    
+                break;
+            case "/" :
+                    
+                break;
+        }
     }
 }

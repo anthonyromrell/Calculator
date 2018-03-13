@@ -9,13 +9,13 @@ public class Calculator : ScriptableObject
 {
 
     public CalulatorPhase StartPhase;
+    public CalulatorPhase CalulatorPhase;
+    public Operation Operation;
 
     private void OnEnable()
     {
         CalulatorPhase = StartPhase;
     }
-
-    public CalulatorPhase CalulatorPhase;
 
     public void ChangePhase(CalulatorPhase calulatorPhase)
     {
@@ -26,4 +26,17 @@ public class Calculator : ScriptableObject
     {
         CalulatorPhase.RunPhase();
     }
+    
+    public void ChangeOperation(Operation operation)
+    {
+        Operation = operation;
+    }
+
+    public void RunOperation()
+    {
+        Operation.Operate();
+    }
+    
+    
+     
 }

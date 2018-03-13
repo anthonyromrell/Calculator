@@ -7,8 +7,8 @@ public class CalculatorPhaseOne : CalulatorPhase {
     
     public override void RunPhase ()//GameAaction as String input
     {
-        Data.Input += IncomingTextHandler.ObjectText;
-        Data.ToOutputText(Data.Input);//GameAaction as String output
+        Data.InputOne += IncomingTextHandler.ObjectText;
+        Data.ToOutputText(Data.InputOne);//GameAaction as String output
     }
     
 }
