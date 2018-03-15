@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Operation : ScriptableObject
 {
-	public abstract void Operate();
+	public abstract void Operate(List<float> numbers);
 }

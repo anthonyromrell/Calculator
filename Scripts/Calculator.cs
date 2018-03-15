@@ -34,7 +34,7 @@ public class Calculator : ScriptableObject
 
     public void RunOperation()
     {
-        Operation.Operate();
+      //  Operation.Operate();
     }
     
     
