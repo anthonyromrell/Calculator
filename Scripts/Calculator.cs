@@ -1,42 +1,105 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.CodeDom.Compiler;
 using System.Globalization;
+using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Calculator")]
 public class Calculator : ScriptableObject
 {
+	public string Input0, Input1, Input2;
+	private float float0, float1, float2;	
+	public bool Add, Subtract, Multiply, Divide;
+	public string solution;
+	
+	public void GetInput(string input)
+	{
+		if (!(Add || Subtract) && !(Multiply || Divide))
+			Input0 = input;
+		
+		
+		if (Add || Subtract || Multiply || Divide)
+			Input1 = input;
+	
 
-    public CalulatorPhase StartPhase;
-    public CalulatorPhase CalulatorPhase;
-    public Operation Operation;
+		if ((Add || Subtract) && (Multiply || Divide))
+			Input2 = input;
+	}
 
-    private void OnEnable()
-    {
-        CalulatorPhase = StartPhase;
-    }
+	public string Operate(string _operator)
+	{
+		float0 = float.Parse(Input0);
+		float1 = float.Parse(Input1);
+		float2 = float.Parse(Input2);
 
-    public void ChangePhase(CalulatorPhase calulatorPhase)
-    {
-        CalulatorPhase = calulatorPhase;
-    }
+		var solution = float.Parse(_operator);
 
-    public void RunPhase()
-    {
-        CalulatorPhase.RunPhase();
-    }
-    
-    public void ChangeOperation(Operation operation)
-    {
-        Operation = operation;
-    }
+		if (Add)
+		{
+			solution = float0 + float1;
+		} 
 
-    public void RunOperation()
-    {
-      //  Operation.Operate();
-    }
-    
-    
-     
+		if (Subtract)
+		{
+			solution = float0 - float1;
+		}
+
+		if (Multiply)
+		{
+			solution = float0 * float1;
+			Divide = false;
+		}
+
+		if (Divide)
+		{
+			solution = float0 / float1;
+			Divide = false;
+		}
+
+		if (Add && Multiply)
+		{
+			solution = float0 + float1 * float2;
+			Multiply = false;
+		}
+
+		if (Add && Divide)
+		{
+			solution = float0 + float1 / float2;
+			Divide = false;
+		}
+
+		if (Subtract && Multiply)
+		{
+			solution = float0 - float1 * float2;
+			Multiply = false;
+		}
+	
+		if (Subtract && Divide)
+		{
+			solution = float0 - float1 / float2;
+			Divide = false;
+		}
+		
+		return solution.ToString(CultureInfo.InvariantCulture);
+	
+	}
+
+	public void AddOperation()
+	{
+		
+	}
+	
+	public void SubtractOperation()
+	{
+		
+	}
+	
+	public void MultiplyOperation()
+	{
+		
+	}
+	
+	public void DivideOperation()
+	{
+		
+	}
 }

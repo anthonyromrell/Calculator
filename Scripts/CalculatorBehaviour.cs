@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "")]
-public class Operator : ScriptableObject {
+//Made By Anthony Romrell
+public class CalculatorBehaviour : MonoBehaviour 
+{
 
 	
 }
